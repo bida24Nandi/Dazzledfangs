@@ -1,1 +1,10 @@
-xyj
+body{
+  font-family: Ariel, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #333
+}
+header{
+  background:pink;
+}
