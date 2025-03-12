@@ -1,3 +1,4 @@
+<style/>
 body{
   font-family: Ariel, sans-serif;
   margin: 0;
@@ -27,4 +28,27 @@ container{
   margin-top: 10px;
   border-radius:5px;
 }
+ .btn:hover {
+             background: pink;
+         }
+         .services, .gallery, .contact {
+             margin-top: 40px;
+         }
+         .services h2, .gallery h2, .contact h2 {
+             color: pink;
+         }
+         .gallery img {
+             width: 150px;
+             margin: 10px;
+             border-radius: 10px;
+             border: 2px solid pink;
+         }
+         footer {
+             background: #333;
+             color: white;
+             text-align: center;
+             padding: 10px;
+             margin-top: 30px;
+         }  
+    </style>
 
