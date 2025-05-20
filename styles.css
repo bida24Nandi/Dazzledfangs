@@ -1,144 +1,51 @@
-/* GENERAL STYLES */
-body {
+main{
+  font-family: Ariel, sans-serif;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #121212;
-  color: #f1f1f1;
-  line-height: 1.6;
-  scroll-behavior: smooth;
-  background-image: url('images/marble-bg.jpg'); /* Optional: use a similar marble texture */
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #333
 }
-
-/* HEADER */
-header {
-  background-color: rgba(0, 0, 0, 0.85);
+      header{
+  background:pink;
   color: #fff;
-  padding: 1rem 0;
-  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+  text-aligh: center;
+  padding: 20px;
 }
-
-header h1 {
-  font-size: 1.8rem;
-  font-weight: bold;
-  letter-spacing: 2px;
+     container{
+  width: 90%;
+  max-width:1000px;
+  margin: 20px auto;
+  text-align: center;
 }
-
-header nav a {
-  text-decoration: none;
-  margin: 0 1rem;
-  color: #e6e6e6;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-header nav a:hover,
-header nav a.text-warning {
-  color: #ff85d0; /* Soft pink glow */
-}
-
-/* BUTTONS */
-.btn-custom {
-  background: linear-gradient(145deg, #ff85d0, #d94fd2);
-  color: #fff;
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 10px rgba(255, 133, 208, 0.5);
-}
-
-.btn-custom:hover {
-  background: #ffaceb;
+    .btn{
+  background: pink;
   color: #000;
-  box-shadow: 0 0 18px rgba(255, 172, 235, 0.7);
-}
-
-/* SECTION HEADINGS */
-h2 {
-  font-size: 2rem;
+  padding: 20px;
+  text-decoration: non;
   font-weight: bold;
-  color: #ffaceb;
-  margin-bottom: 1rem;
+  display: inline-block;
+  margin-top: 10px;
+  border-radius:5px;
 }
-
-/* GALLERY IMAGE HOVER EFFECTS */
-.gallery-img-container img {
-  border-radius: 12px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+    .btn:hover {
+             background: pink;
 }
-
-.gallery-img-container:hover img {
-  transform: scale(1.07);
-  box-shadow: 0 12px 24px rgba(255, 133, 208, 0.25);
+   .services, .gallery, .contact {
+             margin-top: 40px;
 }
-
-/* FOOTER */
-footer {
-  background-color: #0b0b0b;
-  color: #ccc;
-  padding: 2rem 0;
-  margin-top: 3rem;
+   .services h2, .gallery h2, .contact h2 {
+             color: pink;
 }
-
-footer p {
-  margin: 0;
+     .gallery img {
+             width: 150px;
+             margin: 10px;
+             border-radius: 10px;
+             border: 2px solid pink;
 }
-
-footer .social-icons i {
-  font-size: 1.4rem;
-  color: #bbb;
-  margin: 0 0.5rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+     footer {
+             background: #333;
+             color: white;
+             text-align: center;
+             padding: 10px;
+             margin-top: 30px;
 }
-
-footer .social-icons i:hover {
-  color: #ffaceb;
-  transform: scale(1.2);
-}
-
-/* LINKS */
-a {
-  color: #ffcce6;
-  transition: color 0.2s ease-in-out;
-}
-
-a:hover {
-  color: #fff;
-}
-
-/* CUSTOM CARDS / SECTIONS */
-.card-custom {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
-  padding: 1.5rem;
-  color: #fff;
-  box-shadow: 0 0 20px rgba(255, 172, 235, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.card-custom:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 30px rgba(255, 172, 235, 0.2);
-}
-
-/* FORM STYLES */
-input, textarea, select {
-  background-color: #222;
-  border: 1px solid #444;
-  color: #fff;
-  border-radius: 8px;
-  padding: 0.6rem;
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-  border-color: #ffaceb;
-  box-shadow: 0 0 5px #ffaceb;
-}
- 
