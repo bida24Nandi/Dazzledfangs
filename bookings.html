@@ -87,35 +87,44 @@
 
   <!-- JavaScript Logic -->
   <script>
-    // Extract the "set" parameter from the URL
-const urlParams = new URLSearchParams(window.location.search);
-const selectedSet = urlParams.get('set');
+  const bookingForm = document.getElementById('bookingForm');
+  const depositNote = document.getElementById('depositNote');
+  const confirmation = document.getElementById('confirmation');
+  const priceInput = document.getElementById('price');
 
-// If a set was selected, show it in the form
-if (selectedSet) {
-  document.getElementById('set').value = decodeURIComponent(selectedSet);
-}
-    const bookingForm = document.getElementById('bookingForm');
-    const depositNote = document.getElementById('depositNote');
-    const confirmation = document.getElementById('confirmation');
-    const priceInput = document.getElementById('price');
+  // Show deposit note if price > 100
+  priceInput.addEventListener('input', () => {
+    const price = parseFloat(priceInput.value);
+    if (price > 100) {
+      depositNote.classList.remove('d-none');
+    } else {
+      depositNote.classList.add('d-none');
+    }
+  });
 
-    priceInput.addEventListener('input', () => {
-      const price = parseFloat(priceInput.value);
-      if (price > 100) {
-        depositNote.classList.remove('d-none');
-      } else {
-        depositNote.classList.add('d-none');
-      }
-    });
+  // SUBMIT HANDLER — send data to Google Apps Script
+  bookingForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-    bookingForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+    const formData = new FormData(bookingForm);
+
+    fetch("https://script.google.com/macros/s/AKfycbzOSUZc-9038Qmz3_ZjFzvKz8heJgDTCcKu-VqA4uD8MN_ehPQkmYMg1eiHqKZotr81/exec, {
+      method: "POST",
+      body: formData
+    })
+    .then(response => response.text())
+    .then(result => {
+      console.log("Success:", result);
       confirmation.classList.remove('d-none');
       bookingForm.reset();
       depositNote.classList.add('d-none');
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("There was an issue submitting your booking. Please try again.");
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
