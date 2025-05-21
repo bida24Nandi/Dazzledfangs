@@ -37,49 +37,53 @@
 </header>
 
 <!-- Booking Section -->
-<main class="container my-5">
-  <h2 class="mb-4">Book Your Appointment</h2>
-  <form id="bookingForm">
+
+   <main class="container my-5">
+  <h2 class="text-center mb-4">Book Your Appointment</h2>
+  <form action="booking-received.html" method="get" class="p-4 border rounded shadow">
+
+    <!-- Name -->
     <div class="mb-3">
-      <label for="name" class="form-label">Full Name</label>
-      <input type="text" class="form-control" id="name" name="name" required>
+      <label for="fullname" class="form-label">Full Name:</label>
+      <input type="text" id="fullname" name="fullname" class="form-control" required>
     </div>
 
+    <!-- Date -->
     <div class="mb-3">
-      <label for="phone" class="form-label">Phone Number</label>
-      <input type="tel" class="form-control" id="phone" name="phone" required>
+      <label for="bookingDate" class="form-label">Select Date:</label>
+      <input type="date" id="bookingDate" name="bookingDate" class="form-control" required>
     </div>
 
+    <!-- Time -->
     <div class="mb-3">
-      <label for="set" class="form-label">Selected Tooth Gem Set</label>
-      <input type="text" class="form-control" id="set" name="set" readonly>
+      <label for="bookingTime" class="form-label">Select Time:</label>
+      <input type="time" id="bookingTime" name="bookingTime" class="form-control" required>
     </div>
 
+    <!-- Style Selection -->
     <div class="mb-3">
-      <label for="time" class="form-label">Preferred Time</label>
-      <select class="form-control" id="time" name="time" required>
-        <option value="">-- Select Time --</option>
-        <option>10:00 AM</option>
-        <option>11:00 AM</option>
-        <option>12:00 PM</option>
-        <option>2:00 PM</option>
-        <option>3:00 PM</option>
+      <label for="style" class="form-label">Choose a Style:</label>
+      <select id="style" name="style" class="form-select" required>
+        <option value="">-- Select --</option>
+        <option value="Diamond Single Gem">Diamond Single Gem</option>
+        <option value="Butterfly Cluster">Butterfly Cluster</option>
+        <option value="Custom Letter Design">Custom Letter Design</option>
       </select>
     </div>
 
-    <div id="depositNote" class="alert alert-warning d-none">
-      💳 A 50% deposit is required to confirm bookings over P100.<br>
-      Please send deposit to: +267 76285847 (Ewallet / Orange Money)
+    <!-- Deposit Agreement -->
+    <div class="mb-3 form-check">
+      <input type="checkbox" id="depositAgree" class="form-check-input" required>
+      <label for="depositAgree" class="form-check-label">I agree to pay a 50% deposit to confirm my booking.</label>
     </div>
 
-    <button type="submit" class="btn btn-primary">Book Now</button>
+    <!-- Buttons -->
+    <div class="d-flex justify-content-between">
+      <button type="reset" class="btn btn-secondary">Reset</button>
+      <button type="submit" class="btn btn-success">Submit Booking</button>
+    </div>
   </form>
-
-  <div id="confirmation" class="alert alert-success mt-4 d-none">
-    ✅ Your booking request has been received! We’ll contact you shortly to confirm your slot. Thank you for choosing Dazzled Fangs!
-  </div>
 </main>
-
 <!-- Footer -->
 <footer class="bg-dark text-white text-center py-3">
   <p>&copy; 2025 Dazzled Fangs. All Rights Reserved.</p>
