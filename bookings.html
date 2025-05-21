@@ -49,10 +49,11 @@
         <input type="tel" class="form-control" id="phone" required>
       </div>
 
-     <div class="mb-3">
+      <div class="mb-3">
   <label for="set" class="form-label">Selected Tooth Gem Set</label>
   <input type="text" class="form-control" id="set" readonly>
 </div>
+
 
       <div class="mb-3">
         <label for="time" class="form-label">Preferred Time</label>
@@ -86,6 +87,14 @@
 
   <!-- JavaScript Logic -->
   <script>
+    // Extract the "set" parameter from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const selectedSet = urlParams.get('set');
+
+// If a set was selected, show it in the form
+if (selectedSet) {
+  document.getElementById('set').value = decodeURIComponent(selectedSet);
+}
     const bookingForm = document.getElementById('bookingForm');
     const depositNote = document.getElementById('depositNote');
     const confirmation = document.getElementById('confirmation');
