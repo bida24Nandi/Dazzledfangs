@@ -132,27 +132,15 @@
   bookingForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const formData = new FormData(bookingForm);
+    // Simply show confirmation message
+    confirmation.classList.remove('d-none');
+    bookingForm.reset();
 
-    fetch("https://script.google.com/macros/s/AKfycbyZHbRJmYA2xLYp7S0td6Cdx8irx_T4w2CQ8BnYArFt9UWrps_bQ2sR5GhGu9XRVhsW/exec", {
-      method: "POST",
-      body: formData
-    })
-    .then(response => response.text())
-    .then(result => {
-      console.log("Success:", result);
-      confirmation.classList.remove('d-none');
-      bookingForm.reset();
-      setInput.value = selectedSet;
-      priceInput.value = '';
-      depositNote.classList.add('d-none');
-    })
-    .catch(error => {
-      console.error("Error:", error);
-      alert("There was an issue submitting your booking. Please try again.");
-    });
+    // Refill the set input if it was selected from URL
+    setInput.value = selectedSet || '';
+    priceInput.value = '';
+    depositNote.classList.add('d-none');
   });
 </script>
-
 </body>
 </html>
