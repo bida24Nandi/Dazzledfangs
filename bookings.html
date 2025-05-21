@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery | Dazzled Fangs</title>
+  <title>Bookings | Dazzled Fangs</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -29,8 +29,8 @@
     <nav>
       <a href="index.html" class="text-white mx-2">Home</a>
       <a href="about.html" class="text-white mx-2">About</a>
-      <a href="bookings.html" class="text-white mx-2">Bookings</a>
-      <a href="gallery.html" class="text-warning mx-2">Gallery</a>
+      <a href="bookings.html" class="text-warning mx-2">Bookings</a>
+      <a href="gallery.html" class="text-white mx-2">Gallery</a>
       <a href="feedback.html" class="text-white mx-2">Feedback</a>
     </nav>
   </div>
@@ -120,7 +120,6 @@
     }
   }
 
-  // Show/hide deposit note on price change (just in case of future editability)
   priceInput.addEventListener('input', () => {
     const price = parseFloat(priceInput.value);
     if (price > 100) {
@@ -130,13 +129,12 @@
     }
   });
 
-  // Submit handler
   bookingForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
     const formData = new FormData(bookingForm);
 
-    fetch("https://script.google.com/macros/s/AKfycbyZHbRJmYA2xLYp7S0td6Cdx8irx_T4w2CQ8BnYArFt9UWrps_bQ2sR5GhGu9XRVhsW/exec, {
+    fetch("https://script.google.com/macros/s/AKfycbyZHbRJmYA2xLYp7S0td6Cdx8irx_T4w2CQ8BnYArFt9UWrps_bQ2sR5GhGu9XRVhsW/exec", {
       method: "POST",
       body: formData
     })
@@ -145,8 +143,8 @@
       console.log("Success:", result);
       confirmation.classList.remove('d-none');
       bookingForm.reset();
-      setInput.value = selectedSet; // Retain selected set
-      priceInput.value = '';        // Clear price
+      setInput.value = selectedSet;
+      priceInput.value = '';
       depositNote.classList.add('d-none');
     })
     .catch(error => {
