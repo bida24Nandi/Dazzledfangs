@@ -87,6 +87,39 @@
 
   <!-- JavaScript Logic -->
   <script>
+    <script>
+  // Read set name and price from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const selectedSet = urlParams.get('set');
+
+  const setInput = document.getElementById('set');
+  const priceInput = document.createElement('input'); // create hidden input for price
+  priceInput.type = 'hidden';
+  priceInput.id = 'price';
+  priceInput.name = 'price';
+  bookingForm.appendChild(priceInput);
+
+  if (selectedSet) {
+    setInput.value = selectedSet;
+
+    // Auto-fill price based on set
+    switch (selectedSet.trim()) {
+      case "Butterfly set":
+        priceInput.value = 450;
+        break;
+      case "Cross set":
+        priceInput.value = 550;
+        break;
+      default:
+        priceInput.value = 0;
+    }
+
+    // Show deposit note if over 100
+    if (parseFloat(priceInput.value) > 100) {
+      depositNote.classList.remove('d-none');
+    }
+  }
+</script>
   const bookingForm = document.getElementById('bookingForm');
   const depositNote = document.getElementById('depositNote');
   const confirmation = document.getElementById('confirmation');
@@ -108,9 +141,10 @@
 
     const formData = new FormData(bookingForm);
 
-    fetch("https://script.google.com/macros/s/AKfycbzOSUZc-9038Qmz3_ZjFzvKz8heJgDTCcKu-VqA4uD8MN_ehPQkmYMg1eiHqKZotr81/exec, {
-      method: "POST",
-      body: formData
+   fetch("https://script.google.com/macros/s/AKfycbzOSUZc-9038Qmz3_ZjFzvKz8heJgDTCcKu-VqA4uD8MN_ehPQkmYMg1eiHqKZotr81/exec", {
+  method: "POST",
+  body: formData
+})
     })
     .then(response => response.text())
     .then(result => {
