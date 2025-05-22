@@ -74,7 +74,10 @@ h1, h2, h3, h4 {
   color: #4b0082;
   font-weight: bold;
 }
-
+.site-logo {
+  height: 80px;
+  width: auto; /* Maintain aspect ratio */
+}
 /* Buttons */
 .btn,
 button,
