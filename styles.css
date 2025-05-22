@@ -31,11 +31,12 @@ a {
 .social-icons {
   display: flex;
   gap: 10px;
+
 }
 
 .social-icons a {
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 
 .social-icons a:hover {
