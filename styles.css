@@ -75,7 +75,7 @@ h1, h2, h3, h4 {
   font-weight: bold;
 }
 .site-logo {
-  height: 100px;      /* You can increase this */
+  height: 150px;      /* You can increase this */
   width: auto;        /* Maintains aspect ratio */
   max-width: 200px;   /* Optional: Prevents it from being too large on big screens */
   object-fit: contain;
