@@ -16,26 +16,7 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.top-bar {
-  width: 90px;
-  background-color: #4b0082;
-}
 
-.top-bar a {
-  display: block;
-  text-align: center;
-  padding: 16px;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 36px;
-}
-
-.top-bar a:hover {
-  background-color: #000;
-}
-
-.active {
-  background-color: #04AA6D;
 /* Top Bar for Social Icons */
 .top-bar {
   background-color: #4b0082;
@@ -99,7 +80,7 @@ h1, h2, h3, h4 {
   font-weight: bold;
 }
 .site-logo {
-  height: 500px;      /* You can increase this */
+  height: 250px;      /* You can increase this */
   width: auto;        /* Maintains aspect ratio */
   max-width: 200px;   /* Optional: Prevents it from being too large on big screens */
   object-fit: contain;
