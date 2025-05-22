@@ -63,6 +63,11 @@ nav a {
 nav a:hover {
   color: #a064c3;
 }
+nav a:visited,
+nav a:active,
+nav a:focus {
+  color: #4b0082 !important;
+}
 
 /* Main Area */
 main {
@@ -75,7 +80,7 @@ h1, h2, h3, h4 {
   font-weight: bold;
 }
 .site-logo {
-  height: 150px;      /* You can increase this */
+  height: 500px;      /* You can increase this */
   width: auto;        /* Maintains aspect ratio */
   max-width: 200px;   /* Optional: Prevents it from being too large on big screens */
   object-fit: contain;
