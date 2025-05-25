@@ -79,7 +79,7 @@ nav a:focus {
 
 /* Logo aligned right */
 .site-logo {
-  height: 150px;
+  height: 100px;
   width: auto;
   max-width: 100px;
   object-fit: contain;
